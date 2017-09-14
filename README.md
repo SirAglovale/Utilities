@@ -29,4 +29,17 @@ Log to stderr a message with a timestamp and information about the application
 ## Full Example
 ```javascript
 require("@siraglovale/utils"); // require module
+
+setApplication({
+    name: "application_1",
+    version: "0.1.0"
+});
+
+log('Hello World!'); 
+// stdout
+// application_1@0.1.0[Thu Sep 14 2017 22:41:48 GMT+0100 (GMT Summer Time)] -> Hello World!
+
+error('error')
+// stderr
+// application_1@0.1.0[Thu Sep 14 2017 22:41:48 GMT+0100 (GMT Summer Time)] -> error
 ```
