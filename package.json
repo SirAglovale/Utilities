@@ -1,0 +1,22 @@
+{
+  "name": "@siraglovale/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirAglovale/Utilities.git"
+  },
+  "keywords": [
+    "Utilities"
+  ],
+  "author": "Sir Aglovale",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/SirAglovale/Utilities/issues"
+  },
+  "homepage": "https://github.com/SirAglovale/Utilities#readme"
+}
