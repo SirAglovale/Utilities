@@ -1,5 +1,6 @@
 global.log = (eval) => {
     let current_time = new Date();
+    current_time = current_time.toISOString();
     if(eval instanceof Object) {
         eval = JSON.stringify(eval);
     }
@@ -8,6 +9,7 @@ global.log = (eval) => {
 
 global.error = (eval) => {
     let current_time = new Date();
+    current_time = current_time.toISOString();
     if(eval instanceof Object) {
         eval = JSON.stringify(eval);
     }
