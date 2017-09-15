@@ -96,6 +96,19 @@ Converts a utf8 string to a hex string
 Converts a utf8 string to a utf-16 little endian string
 * \_utf8\_: \<string\>
 
+### Password Functions
+
+#### utils.hashPassword(password, secret)
+Hash your password with a pseudo-randomly generated salt.
+* password: \<string\>
+* secret: \<string\> CONSTANT
+
+#### utils.validatePassword(password, hash, secret)
+Validate a submitted password against a hash stored in your database
+* password: \<string\>
+* hash: \<string\>
+* secret: \<string\> CONSTANT
+
 ### Demo
 
 #### Example
