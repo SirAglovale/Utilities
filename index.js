@@ -36,6 +36,11 @@ let {
     utf8toUTF16LE
 } = require('./encoding');
 
+let {
+    hashPassword,
+    verifyPassword
+} = require('./password');
+
 module.exports = {
     setApplication,
 
@@ -57,5 +62,8 @@ module.exports = {
     utf8toAscii,
     utf8toB64,
     utf8toHex,
-    utf8toUTF16LE
+    utf8toUTF16LE,
+
+    hashPassword,
+    verifyPassword
 }
