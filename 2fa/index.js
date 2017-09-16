@@ -6,7 +6,7 @@ const { imageSync } = require('qr-image');
  * @param {String} _email
  */
 const genSecret = (_email) => {
-    let secret = generateSecret({name: global._utils.application.name, account: _id});
+    let secret = generateSecret({name: global._utils.application.name, account: _email});
     return secret.secret;
 }
 
