@@ -109,6 +109,22 @@ Validate a submitted password against a hash stored in your database
 * hash: \<string\>
 * secret: \<string\> CONSTANT
 
+### 2 Factor Authentication Functions
+
+#### utils.genSecret(_email)
+Generate a secret for use in 2 Factor Authentication, this is used to generate the TOTP
+* _email: \<string\>
+
+#### utils.genQR(_email, _secret)
+Generate a QR Code for the user based of the secret generated using genSecret, to use in conjunction with Google Authenticator, Authy or similar
+* _email: \<string\>
+* _secret: \<string\>
+
+#### utils.verifyTFA(_token, _secret)
+Returns an object that the token relates to, and, verifies the user
+* _token: \<string\>
+* _secret: \<string\>
+
 ### Demo
 
 #### Example

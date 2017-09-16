@@ -41,6 +41,12 @@ let {
     verifyPassword
 } = require('./password');
 
+let {
+    genQR,
+    genSecret,
+    verifyTFA
+} = require('./2fa');
+
 module.exports = {
     setApplication,
 
@@ -65,5 +71,9 @@ module.exports = {
     utf8toUTF16LE,
 
     hashPassword,
-    verifyPassword
+    verifyPassword,
+
+    genQR,
+    genSecret,
+    verifyTFA
 }
