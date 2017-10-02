@@ -38,7 +38,11 @@ let {
 
 let {
     hashPassword,
-    verifyPassword
+    hashPasswordWithBcrypt,
+    hashPasswordWithBcryptSync,
+    verifyPassword,
+    verifyBcryptPassword,
+    verifyBcryptPasswordSync
 } = require('./password');
 
 let {
@@ -71,7 +75,11 @@ module.exports = {
     utf8toUTF16LE,
 
     hashPassword,
+    hashPasswordWithBcrypt,
+    hashPasswordWithBcryptSync,
     verifyPassword,
+    verifyBcryptPassword,
+    verifyBcryptPasswordSync,
 
     genQR,
     genSecret,
