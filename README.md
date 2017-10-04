@@ -103,11 +103,31 @@ Hash your password with a pseudo-randomly generated salt.
 * password: \<string\>
 * secret: \<string\> CONSTANT
 
+#### utils.hashPasswordWithBcrypt(password, saltRounds)
+Hash a password with bcrypt
+* password: \<string\>
+* saltRounds: \<number\>
+
+#### utils.hashPasswordWithBcryptSync(password, saltRounds)
+Hash a password with bcrypt synchronously
+* password: \<string\>
+* saltRounds: \<number\>
+
 #### utils.validatePassword(password, hash, secret)
 Validate a submitted password against a hash stored in your database
 * password: \<string\>
 * hash: \<string\>
 * secret: \<string\> CONSTANT
+
+#### utils.verifyBcryptPassword(password, hash)
+Validates a bcrypt password
+* password: \<string\>
+* hash: \<string\>
+
+#### utils.verifyBcryptPasswordSync(password, hash)
+Validates a bcrypt password synchronously
+* password: \<string\>
+* hash: \<string\>
 
 ### 2 Factor Authentication Functions
 
