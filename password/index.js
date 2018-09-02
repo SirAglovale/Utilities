@@ -20,8 +20,19 @@ const hashPassword = (password, secret) => {
  * @returns {Promise<String>} Represents the hashed password
  */
 const hashPasswordWithBcrypt = (password, saltRounds) => {
-  const handledSaltRounds = handleBcryptSaltRounds(saltRounds);
-  return bcrypt.hash(password, handledSaltRounds);
+  return new Promise((resolve, reject) => {
+    bcrypt.genSalt(saltRounds, (err, salt) => {
+      if (err) {
+        return reject(err);
+      }
+      bcrypt.hash(password, handledSaltRounds, (err, hash) => {
+        if (err) {
+          return reject(err);
+        }
+        return resolve(hash);
+      });
+    });
+  });
 };
 
 /**
@@ -31,8 +42,8 @@ const hashPasswordWithBcrypt = (password, saltRounds) => {
  * @returns {String} Hashed password
  */
 const hashPasswordWithBcryptSync = (password, saltRounds) => {
-  const handledSaltRounds = handleBcryptSaltRounds(saltRounds);
-  return bcrypt.hashSync(password, handledSaltRounds);
+  const salt = bcrypt.genSaltSync(saltRounds);
+  return bcrypt.hashSync(password, salt);
 };
 
 /**
@@ -64,7 +75,14 @@ const verifyPassword = (password, hash, secret) => {
  * @returns {Promise<boolean>} Is match
  */
 const verifyBcryptPassword = (password, hash) => {
-  return bcrypt.compare(password, hash);
+  return new Promise((reject, resolve) => {
+    bcrypt.compare(password, hash, (err, res) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(res);
+    });
+  });
 };
 
 /**
